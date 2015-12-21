@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+temp=$(mktemp /tmp/cXXXXXX)
+
+{
+  echo 'package main'
+  echo 'import ('
+  echo '"os"'
+  echo '"fmt"'
+  echo '"bufio"'
+  echo ')'
+  echo 'var sc = bufio.NewScanner(os.Stdin)'
+  echo 'func main(){'
+  echo $@
+  echo ';}'
+} >> $temp.go
+
+
+#cat $temp.c
+
+{
+  go run $temp.go < /dev/stdin
+}

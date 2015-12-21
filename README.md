@@ -1,9 +1,13 @@
-# c1
-C oneliner
+# g1
+Go oneliner
 
 ## example
 
 ```
-echo "Hello world" | ./c 'char x[256];fgets(x,sizeof(x),stdin);puts(x)'
-Hello world
+cat /etc/profile |  sh -x ./g1 'for{if(!sc.Scan()){break};fmt.Println(sc.Text())}'
+# /etc/profile
+
+# System wide environment and startup programs, for login setup
+# Functions and aliases go in /etc/bashrc
+...omitted...
 ```
